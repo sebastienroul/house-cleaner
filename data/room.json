@@ -1,0 +1,54 @@
+[
+  {
+    "id": "cuisine",
+    "label": "Cuisine"
+  },
+  {
+    "id": "salle-bain",
+    "label": "Salle de bain"
+  },
+  {
+    "id": "escalier",
+    "label": "Escalier"
+  },
+  {
+    "id": "entree",
+    "label": "Entrée"
+  },
+  {
+    "id": "salon",
+    "label": "Salon"
+  },
+  {
+    "id": "game-room",
+    "label": "Salle de jeux"
+  },
+  {
+    "id": "wc-1",
+    "label": "WC étage 1"
+  },
+  {
+    "id": "wc-2",
+    "label": "WC étage 2"
+  },
+  {
+    "id": "chb-mateo",
+    "label": "Chambre Matéo"
+  },
+  {
+    "id": "chb-ben",
+    "label": "Chambre Ben"
+  },
+  {
+    "id": "chb-parent",
+    "label": "Chambre parent"
+  },
+  {
+    "id": "chb-jul",
+    "label": "Chambre Juliette"
+  },
+  {
+    "id": "palier",
+    "label": "Palier"
+  }
+]

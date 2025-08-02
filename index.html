@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programme de ménage</title>
+  <!-- Quasar CSS UMD pour Vue 3 / Quasar 2 -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet"
+    type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/quasar@2.18.1/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div id="q-app" class="column flex" style="height:100vh; margin:0">
+    <div class="col-10 print-hide" style="overflow-y: scroll;">
+      <q-tabs v-model="panel" inline-label outside-arrows mobile-arrows class="bg-primary text-white shadow-2">
+        <q-tab :name="room.id" :label="room.label" v-for="room in rooms" :key="room.id">
+        </q-tab>
+      </q-tabs>
+      <!-- Boucle sur les pièces -->
+      <q-tab-panels v-model="panel" animated swipeable infinite class="shadow-2 rounded-borders">
+        <q-tab-panel :name="room.id" v-for="room in rooms" :key="room.id">
+          <q-card flat bordered>
+            <q-card-section class="bg-blue-grey-6 text-grey-2 text-h4">
+              <q-checkbox dark v-model="selectedRooms" :val="room.id" :label="room.label"
+                @update:model-value="(val) => changeRoom(val, room)">
+              </q-checkbox>
+            </q-card-section>
+            <q-card-section class="no-padding">
+              <template v-for="(tasks, key) in tasksByRoom(room.id)" :key="key">
+                <q-list separator :class="'bg-' + bgColor[key] + '-2'">
+                  <q-item v-for="task in tasks" class="col-12">
+                    <q-checkbox v-model="selectedTasks[room.id]" :val="task.travailId"
+                      :label="`${workMap[task.travailId].label} ${estimateDuration(room.id, task.travailId)}`">
+                    </q-checkbox>
+                  </q-item>
+                </q-list>
+                <q-separator></q-separator>
+              </template>
+            </q-card-section>
+          </q-card>
+        </q-tab-panel>
+      </q-tab-panels>
+    </div>
+
+    <!-- Programme généré -->
+    <div class=" col-12 print-only ">
+      <div class="row">
+        <div class="col-8 text-h5">Programme de la semaine</div>
+        <div class="col-4 text-h5">{{(new Date()).toLocaleDateString('fr-FR')}}</div>
+        <div class="col-12 q-mb-lg">
+        <q-separator></q-separator>
+        </div>
+        <div class="col-6 q-pa-md" v-for="(works,room) in schedule" :key="room">
+
+          <div class="row justify-end item-center">
+            <div class="col-12 bg-grey-2 text-uppercase text-h5">
+              {{room}}
+            </div>
+            <div class="col-11">
+              <q-list dense separator bordered>
+                <q-item v-for="work in works" :key="work.id">
+                  {{work.work}} <q-chip class="q-ml-md" size="sm" square v-if="work.frequence==='A'" label="x2"/>
+                </q-item>
+              </q-list>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="relative-position col-2 q-pa-md bg-blue-grey-8 text-grey-2 print-hide" style="min-height:50px">
+      <q-badge floating class="q-mx-md q-pa-xs text-grey-7" color="grey-3" @click="printSchedule()">
+        <q-icon class="q-pr-xs" name="print"></q-icon> {{Math.floor(timeWorkList/60)}} h {{(timeWorkList%60) || 0}} min
+      </q-badge>
+      <div class="row">
+        <div class="col-12">
+          <q-chip square size="sm" v-for="(conso, key) in consoWorkList" :label="key + ' : ' + conso"></q-chip>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Librairies UMD -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quasar@2.18.1/dist/quasar.umd.prod.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script>
+    // Récupération des modules
+    const { createApp } = Vue;
+    const QuasarPlugin = window.Quasar;
+    const _ = window._;
+
+    // Charger les JSON
+    Promise.all([
+      fetch('data/room.json').then(r => r.json()),
+      fetch('data/work.json').then(r => r.json()),
+      fetch('data/room-work.json').then(r => r.json())
+    ]).then(([rooms, workList, roomWorkList]) => {
+      const app = createApp({
+        data() {
+          return {
+            panel: null,
+            rooms,
+            workList,
+            roomWorkList,
+            selectedRooms: [],
+            selectedTasks: {},
+            bgColor: { 'A':'teal','W': 'green', 'M': 'orange', 'Y': 'red' }
+
+          };
+        },
+        computed: {
+          schedule() {
+            return _.reduce(this.selectedTasks, (memo, tasks, room) => {
+              if (!memo[room]) {
+                memo[room] = []
+              }
+              _.each(tasks, task => {
+                const work = _.find(this.workList, w => w.id == task)
+                const item  = _.find(this.roomWorkList, r => r.pieceId === room && r.travailId === task)
+                memo[room].push(
+                  {room, work: work.label, frequence:item.frequence}
+                )
+              })
+              return memo
+            }, {})
+          },
+          timeWorkList() {
+            return _.reduce(this.selectedTasks, (memo, tasks, room) => {
+              return _.reduce(tasks, (memo1, task) => {
+                const item  = _.find(this.roomWorkList, r => r.pieceId === room && r.travailId === task)
+                if (!item) {
+                  return memo1
+                }
+                return memo1 + ((['A'].includes(item.frequence)  ? 2 : 1) * item?.duree || 0)
+              }, 0) + memo
+            }, 0)
+          },
+          consoWorkList() {
+            return _.reduce(this.selectedTasks, (memo, tasks, room) => {
+              _.each(tasks, (task) => {
+                const consos = _.find(this.workList, w => w.id == task)?.consommables
+                if (!consos?.length) { return }
+                _.each(consos, conso => {
+                  if (!memo[conso]) {
+                    memo[conso] = 0
+                  }
+                  memo[conso]++
+                })
+              })
+              return memo
+            }, {})
+          },
+          workMap() {
+            return _.keyBy(this.workList, 'id');
+          }
+        },
+        created() {
+
+          this.panel = this.rooms[0].id
+          // Init selectedTasks pour chaque pièce
+          this.rooms.forEach(r => {
+            this.selectedTasks[r.id] = [];
+            this.selectedRooms.push(r.id)
+            this.changeRoom(this.selectedRooms, r)
+          });
+        },
+        methods: {
+          changeRoom(val, room) {
+            const toAdd = val.includes(room.id)
+            _.each(this.roomWorkList, rw => {
+              if (rw.pieceId !== room.id) { return }
+              if (!['A','W'].includes(rw.frequence)) { return }
+              if (toAdd) {
+                this.selectedTasks[room.id].push(rw.travailId)
+              } else {
+
+                _.remove(this.selectedTasks[room.id], r => r === rw.travailId)
+              }
+
+            })
+          },
+          tasksByRoom(roomId) {
+            return _.groupBy(_.filter(this.roomWorkList, rw => rw.pieceId === roomId), rw => rw.frequence);
+          },
+          estimateDuration(roomId, travailId) {
+            const rw = _.find(this.roomWorkList, { pieceId: roomId, travailId });
+            return rw && rw.duree ? `${rw.duree} min` : '';
+          },
+          consumablesFor(travailId) {
+            return _.get(this.workMap, [travailId, 'consommables'], []);
+          },
+          generateSchedule() {
+            this.schedule = [];
+            _.forEach(this.selectedRooms, roomId => {
+              _.forEach(this.selectedTasks[roomId], tid => {
+                const room = _.find(this.rooms, { id: roomId });
+                const task = this.workMap[tid];
+                this.schedule.push({
+                  room: roomId,
+                  roomLabel: room.label,
+                  task: tid,
+                  taskLabel: task.label
+                });
+              });
+            });
+          },
+          printSchedule() {
+            window.print();
+          }
+        }
+      });
+
+      // Activation de Quasar et montage
+      app.use(QuasarPlugin);
+      app.mount('#q-app');
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "aspirateur",
+    "label": "Aspirer le sol",
+    "consommables": []
+  },
+  {
+    "id": "vaporetto",
+    "label": "Passer le Vaporetto",
+    "consommables": []
+  },
+  {
+    "id": "araignee",
+    "label": "Enlever les toiles",
+    "consommables": []
+  },
+  {
+    "id": "poussiere_mur",
+    "label": "Dépoussiérer mur",
+    "consommables": []
+  },
+  {
+    "id": "radiateur",
+    "label": "Nettoyer radiateur",
+    "consommables": []
+  },
+  {
+    "id": "lavabo",
+    "label": "Nettoyer lavabo",
+    "consommables": ["Anticalcaire", "Éponge"]
+  },
+  {
+    "id": "plan_travail",
+    "label": "Nettoyer plan de travail",
+    "consommables": ["Nettoyant cuisine", "Microfibre"]
+  },
+  {
+    "id": "toilette",
+    "label": "Nettoyer toilettes",
+    "consommables": ["Gel", "Éponge", "WC Tab"]
+  },
+  {
+    "id": "faience",
+    "label": "Nettoyer faïence",
+    "consommables": ["Anticalcaire", "Microfibre"]
+  },
+  {
+    "id": "vitre",
+    "label": "Nettoyer vitres",
+    "consommables": ["Spray vitres", "Microfibre"]
+  },
+  {
+    "id": "plinthe",
+    "label": "Nettoyer plinthes",
+    "consommables": ["Multiusage", "Microfibre"]
+  },
+  {
+    "id": "interrupteur",
+    "label": "Nettoyer interrupteurs",
+    "consommables": ["Multiusage", "Microfibre"]
+  },
+  {
+    "id": "facade_placard",
+    "label": "Nettoyer façades de placard",
+    "consommables": ["Multiusage", "Microfibre"]
+  },
+  {
+    "id": "siphon",
+    "label": "Détartrer siphon",
+    "consommables": ["Anticalcaire", "Microfibre"]
+  },
+  {
+    "id": "douche",
+    "label": "Douche",
+    "consommables": ["Anticalcaire", "Microfibre","Bref"]
+  },
+  {
+    "id": "hotte",
+    "label": "Nettoyer hotte",
+    "consommables": ["Multiusage", "Grattoir ou éponge"]
+  }
+]
