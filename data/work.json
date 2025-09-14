@@ -27,7 +27,7 @@
   {
     "id": "lavabo",
     "label": "Nettoyer lavabo",
-    "consommables": ["Bref", "Éponge"]
+    "consommables": ["Anticalcaire", "Éponge"]
   },
   {
     "id": "plan_travail",
@@ -42,7 +42,7 @@
   {
     "id": "faience",
     "label": "Nettoyer faïence",
-    "consommables": ["Bref", "Microfibre"]
+    "consommables": ["Anticalcaire", "Microfibre"]
   },  {
     "id": "douche",
     "label": "Douche",
@@ -71,7 +71,7 @@
   {
     "id": "siphon",
     "label": "Détartrer siphon",
-    "consommables": ["Bref", "Microfibre"]
+    "consommables": ["Anticalcaire", "Microfibre"]
   },
   {
     "id": "hotte",

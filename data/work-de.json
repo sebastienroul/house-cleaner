@@ -32,7 +32,7 @@
   {
     "id": "lavabo",
     "label": "Waschbecken reinigen",
-    "consommables": ["Bref", "Schwamm"]
+    "consommables": ["Entkalker", "Schwamm"]
   },
   {
     "id": "plan_travail",
@@ -47,7 +47,7 @@
   {
     "id": "faience",
     "label": "Fliesen reinigen",
-    "consommables": ["Bref", "Mikrofaser"]
+    "consommables": ["Entkalker", "Mikrofaser"]
   },
   {
     "id": "vitre",
@@ -72,7 +72,7 @@
   {
     "id": "siphon",
     "label": "Siphon entkalken",
-    "consommables": ["Bref", "Mikrofaser"]
+    "consommables": ["Entkalker", "Mikrofaser"]
   },
   {
     "id": "hotte",
