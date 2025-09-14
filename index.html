@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>House cleaner</title>
+  <title>Programme de ménage</title>
   <!-- Quasar CSS UMD pour Vue 3 / Quasar 2 -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet"
     type="text/css">
@@ -46,9 +46,12 @@
 
     <!-- Programme généré -->
     <div class=" col-12 print-only ">
-      <div class="row">
-        <div class="col-8 text-h5">Programme de la semaine</div>
-        <div class="col-4 text-h5">{{(new Date()).toLocaleDateString('fr-FR')}}</div>
+      <div class="row items-center">
+        <div class="col-8 text-h3">Week</div>
+        <div class="col-4 text-right text-h5">
+          <div>{{(new Date()).toLocaleDateString('fr-FR')}}</div>
+          <div class="text-caption">{{Math.floor(timeWorkList/60)}} h {{(timeWorkList%60) || 0}} min</div>
+        </div>
         <div class="col-12 q-mb-lg">
         <q-separator></q-separator>
         </div>
@@ -61,7 +64,7 @@
             <div class="col-11">
               <q-list dense separator bordered>
                 <q-item v-for="work in works" :key="work.id">
-                  {{work.work}} <q-chip class="q-ml-md" size="sm" square v-if="work.frequence==='A'" label="x2"/>
+                  {{work.work}} <q-chip class="q-ml-md" size="sm" square v-if="work.frequence==='A'" label="M / F"/>
                 </q-item>
               </q-list>
             </div>
@@ -70,7 +73,7 @@
       </div>
     </div>
     <div class="relative-position col-2 q-pa-md bg-blue-grey-8 text-grey-2 print-hide" style="min-height:50px">
-      <q-badge floating class="q-mx-md q-pa-xs text-grey-7" color="grey-3" @click="printSchedule()">
+      <q-badge floating class="cursor-pointer q-mx-md q-pa-xs text-grey-7" color="grey-3" @click="printSchedule()">
         <q-icon class="q-pr-xs" name="print"></q-icon> {{Math.floor(timeWorkList/60)}} h {{(timeWorkList%60) || 0}} min
       </q-badge>
       <div class="row">
@@ -92,12 +95,16 @@
     const { createApp } = Vue;
     const QuasarPlugin = window.Quasar;
     const _ = window._;
-
+    let lang = ''
+    const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has('lang')) {
+  lang = '-' +urlParams.get('lang');
+}
     // Charger les JSON
     Promise.all([
-      fetch('data/room.json').then(r => r.json()),
-      fetch('data/work.json').then(r => r.json()),
-      fetch('data/room-work.json').then(r => r.json())
+      fetch('data/room'+lang+'.json').then(r => r.json()),
+      fetch('data/work'+lang+'.json').then(r => r.json()),
+      fetch('data/room-work'+lang+'.json').then(r => r.json())
     ]).then(([rooms, workList, roomWorkList]) => {
       const app = createApp({
         data() {
@@ -109,19 +116,22 @@
             selectedRooms: [],
             selectedTasks: {},
             bgColor: { 'A':'teal','W': 'green', 'M': 'orange', 'Y': 'red' }
+
           };
         },
         computed: {
           schedule() {
             return _.reduce(this.selectedTasks, (memo, tasks, room) => {
-              if (!memo[room]) {
-                memo[room] = []
+              const roomLocal = _.find(this.rooms, w => w.id == room)
+              if (!memo[roomLocal.label]) {
+                memo[roomLocal.label] = []
               }
               _.each(tasks, task => {
+                
                 const work = _.find(this.workList, w => w.id == task)
                 const item  = _.find(this.roomWorkList, r => r.pieceId === room && r.travailId === task)
-                memo[room].push(
-                  {room, work: work.label, frequence:item.frequence}
+                memo[roomLocal.label].push(
+                  {room: roomLocal?.label, work: work.label, frequence:item.frequence}
                 )
               })
               return memo

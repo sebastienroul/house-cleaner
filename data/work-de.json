@@ -1,0 +1,77 @@
+[
+  {
+    "id": "aspirateur",
+    "label": "Boden saugen",
+    "consommables": []
+  },
+  {
+    "id": "vaporetto",
+    "label": "Mit dem Dampfreiniger reinigen",
+    "consommables": []
+  },
+  {
+    "id": "araignee",
+    "label": "Spinnweben entfernen",
+    "consommables": []
+  },
+  {
+    "id": "poussiere_mur",
+    "label": "Wände abstauben",
+    "consommables": []
+  },
+  {
+    "id": "radiateur",
+    "label": "Heizkörper reinigen",
+    "consommables": []
+  },
+  {
+    "id": "lavabo",
+    "label": "Waschbecken reinigen",
+    "consommables": ["Entkalker", "Schwamm"]
+  },
+  {
+    "id": "plan_travail",
+    "label": "Arbeitsfläche reinigen",
+    "consommables": ["Küchenreiniger", "Mikrofaser"]
+  },
+  {
+    "id": "toilette",
+    "label": "Toilette reinigen",
+    "consommables": ["WC-Gel", "Schwamm"]
+  },
+  {
+    "id": "faience",
+    "label": "Fliesen reinigen",
+    "consommables": ["Entkalker", "Mikrofaser"]
+  },
+  {
+    "id": "vitre",
+    "label": "Fenster reinigen",
+    "consommables": ["Glasreiniger", "Mikrofaser"]
+  },
+  {
+    "id": "plinthe",
+    "label": "Sockelleisten reinigen",
+    "consommables": ["Allzweckreiniger", "Mikrofaser"]
+  },
+  {
+    "id": "interrupteur",
+    "label": "Lichtschalter reinigen",
+    "consommables": ["Allzweckreiniger", "Mikrofaser"]
+  },
+  {
+    "id": "facade_placard",
+    "label": "Schrankfronten reinigen",
+    "consommables": ["Allzweckreiniger", "Mikrofaser"]
+  },
+  {
+    "id": "siphon",
+    "label": "Siphon entkalken",
+    "consommables": ["Entkalker", "Mikrofaser"]
+  },
+  {
+    "id": "hotte",
+    "label": "Dunstabzugshaube reinigen",
+    "consommables": ["Allzweckreiniger", "Schaber oder Schwamm"]
+  }
+]

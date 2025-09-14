@@ -37,7 +37,7 @@
   {
     "id": "toilette",
     "label": "Nettoyer toilettes",
-    "consommables": ["Gel", "Éponge", "WC Tab"]
+    "consommables": ["Gel WC", "Éponge"]
   },
   {
     "id": "faience",
@@ -68,11 +68,6 @@
     "id": "siphon",
     "label": "Détartrer siphon",
     "consommables": ["Anticalcaire", "Microfibre"]
-  },
-  {
-    "id": "douche",
-    "label": "Douche",
-    "consommables": ["Anticalcaire", "Microfibre","Bref"]
   },
   {
     "id": "hotte",
