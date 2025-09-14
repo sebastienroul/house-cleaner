@@ -3,7 +3,7 @@
     "pieceId": "cuisine",
     "travailId": "aspirateur",
     "duree": 5,
-    "frequence": "A"
+    "frequence": "W"
   },
   {
     "pieceId": "cuisine",
@@ -51,7 +51,7 @@
     "pieceId": "salle-bain",
     "travailId": "aspirateur",
     "duree": 5,
-    "frequence": "A"
+    "frequence": "W"
   },
   {
     "pieceId": "salle-bain",
@@ -79,9 +79,9 @@
   },
   {
     "pieceId": "salle-bain",
-    "travailId": "faience",
+    "travailId": "douche",
     "duree": 20,
-    "frequence": "M"
+    "frequence": "W"
   },
   {
     "pieceId": "salle-bain",
@@ -106,12 +106,6 @@
     "travailId": "facade_placard",
     "duree": 5,
     "frequence": "M"
-  },
-  {
-    "pieceId": "salle-bain",
-    "travailId": "siphon",
-    "duree": 10,
-    "frequence": "W"
   },
   {
     "pieceId": "escalier",
@@ -153,7 +147,7 @@
     "pieceId": "entree",
     "travailId": "aspirateur",
     "duree": 2,
-    "frequence": "A"
+    "frequence": "W"
   },
   {
     "pieceId": "entree",
@@ -267,7 +261,7 @@
     "pieceId": "wc-1",
     "travailId": "aspirateur",
     "duree": 2,
-    "frequence": "A"
+    "frequence": "W"
   },
   {
     "pieceId": "wc-1",

@@ -13,7 +13,7 @@
 
 <body>
   <div id="q-app" class="column flex" style="height:100vh; margin:0">
-    <div class="col-10 print-hide" style="overflow-y: scroll;">
+    <div class="col print-hide" style="overflow-y: scroll;">
       <q-tabs v-model="panel" inline-label outside-arrows mobile-arrows class="bg-primary text-white shadow-2">
         <q-tab :name="room.id" :label="room.label" v-for="room in rooms" :key="room.id">
         </q-tab>
@@ -30,10 +30,16 @@
             <q-card-section class="no-padding">
               <template v-for="(tasks, key) in tasksByRoom(room.id)" :key="key">
                 <q-list separator :class="'bg-' + bgColor[key] + '-2'">
-                  <q-item v-for="task in tasks" class="col-12">
-                    <q-checkbox v-model="selectedTasks[room.id]" :val="task.travailId"
-                      :label="`${workMap[task.travailId].label} ${estimateDuration(room.id, task.travailId)}`">
+                  <q-item v-for="task in tasks" class="col-12 items-center">
+                    <q-item-section >
+                      <q-checkbox v-model="selectedTasks[room.id]" :val="task.travailId"
+                      :label="`${workMap[task.travailId].label}`">
                     </q-checkbox>
+                    
+                  </q-item-section>
+                  <q-item-section avatar>
+                    {{`${estimateDuration(room.id, task.travailId)}`}}
+                    <q-item-section>
                   </q-item>
                 </q-list>
                 <q-separator></q-separator>
@@ -44,7 +50,6 @@
       </q-tab-panels>
     </div>
 
-    <!-- Programme généré -->
     <div class=" col-12 print-only ">
       <div class="row items-center">
         <div class="col-8 text-h3">Week</div>
@@ -64,7 +69,7 @@
             <div class="col-11">
               <q-list dense separator bordered>
                 <q-item v-for="work in works" :key="work.id">
-                  {{work.work}} <q-chip class="q-ml-md" size="sm" square v-if="work.frequence==='A'" label="M / F"/>
+                  {{work.work}}
                 </q-item>
               </q-list>
             </div>
@@ -72,7 +77,7 @@
         </div>
       </div>
     </div>
-    <div class="relative-position col-2 q-pa-md bg-blue-grey-8 text-grey-2 print-hide" style="min-height:50px">
+    <div class="relative-position col-auto q-pa-md bg-blue-grey-8 text-grey-2 print-hide" style="min-height:50px">
       <q-badge floating class="cursor-pointer q-mx-md q-pa-xs text-grey-7" color="grey-3" @click="printSchedule()">
         <q-icon class="q-pr-xs" name="print"></q-icon> {{Math.floor(timeWorkList/60)}} h {{(timeWorkList%60) || 0}} min
       </q-badge>
@@ -104,7 +109,7 @@ if (urlParams.has('lang')) {
     Promise.all([
       fetch('data/room'+lang+'.json').then(r => r.json()),
       fetch('data/work'+lang+'.json').then(r => r.json()),
-      fetch('data/room-work'+lang+'.json').then(r => r.json())
+      fetch('data/room-work.json').then(r => r.json())
     ]).then(([rooms, workList, roomWorkList]) => {
       const app = createApp({
         data() {
@@ -193,6 +198,7 @@ if (urlParams.has('lang')) {
             })
           },
           tasksByRoom(roomId) {
+            // Liste des taches pour une piece.
             return _.groupBy(_.filter(this.roomWorkList, rw => rw.pieceId === roomId), rw => rw.frequence);
           },
           estimateDuration(roomId, travailId) {
