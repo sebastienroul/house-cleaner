@@ -63,8 +63,13 @@
         <div class="col-6 q-pa-md" v-for="(works,room) in schedule" :key="room">
 
           <div class="row justify-end item-center">
-            <div class="col-12 bg-grey-2 text-uppercase text-h5">
-              {{room}}
+            <div class="col-10 bg-grey-2 text-uppercase text-h5 q-pl-sm">
+              {{works[0]?.room}}
+            </div>
+            <div class="col-2 bg-grey-2 text-uppercase text-right q-pr-sm">
+              <q-chip outline size="sm">
+              {{works[0]?.etage}}
+              </q-chip>
             </div>
             <div class="col-11">
               <q-list dense separator bordered>
@@ -102,15 +107,16 @@
     const _ = window._;
     let lang = ''
     const urlParams = new URLSearchParams(window.location.search);
-if (urlParams.has('lang')) {
-  lang = '-' +urlParams.get('lang');
-}
+    if (urlParams.has('lang')) {
+      lang = '-' +urlParams.get('lang');
+    }
     // Charger les JSON
     Promise.all([
       fetch('data/room'+lang+'.json').then(r => r.json()),
       fetch('data/work'+lang+'.json').then(r => r.json()),
       fetch('data/room-work.json').then(r => r.json())
     ]).then(([rooms, workList, roomWorkList]) => {
+      rooms = _.sortBy(rooms, r => `${r.etage}#${r.label}`)
       const app = createApp({
         data() {
           return {
@@ -128,15 +134,15 @@ if (urlParams.has('lang')) {
           schedule() {
             return _.reduce(this.selectedTasks, (memo, tasks, room) => {
               const roomLocal = _.find(this.rooms, w => w.id == room)
-              if (!memo[roomLocal.label]) {
-                memo[roomLocal.label] = []
+              if (!memo[roomLocal.etage + '#' + roomLocal.label]) {
+                memo[roomLocal.etage + '#' + roomLocal.label] = []
               }
               _.each(tasks, task => {
                 
                 const work = _.find(this.workList, w => w.id == task)
                 const item  = _.find(this.roomWorkList, r => r.pieceId === room && r.travailId === task)
-                memo[roomLocal.label].push(
-                  {room: roomLocal?.label, work: work.label, frequence:item.frequence}
+                memo[roomLocal.etage + '#' + roomLocal.label].push(
+                  {room: roomLocal?.label, etage:roomLocal?.etage,work: work.label, frequence:item.frequence}
                 )
               })
               return memo

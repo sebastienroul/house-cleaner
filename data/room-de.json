@@ -1,54 +1,67 @@
 [
 {
 "id": "cuisine",
-"label": "Küche"
+"label": "Küche",
+"etage":0
 },
 {
 "id": "salle-bain",
-"label": "Badezimmer"
+"label": "Badezimmer",
+"etage":1
 },
 {
 "id": "escalier",
-"label": "Treppe"
+"label": "Treppe",
+"etage":0
 },
 {
 "id": "entree",
-"label": "Eingang"
+"label": "Eingang",
+"etage":0
 },
 {
 "id": "salon",
-"label": "Wohnzimmer"
+"label": "Wohnzimmer",
+"etage":0
 },
 {
 "id": "game-room",
-"label": "Spielzimmer"
+"label": "Spielzimmer",
+"etage":0
 },
 {
 "id": "wc-1",
-"label": "WC Etage 1"
+"label": "WC Etage 1",
+"etage":0
 },
 {
 "id": "wc-2",
-"label": "WC Etage 2"
+"label": "WC Etage 2",
+"etage":1
 },
 {
 "id": "chb-mateo",
-"label": "Mateos Zimmer"
+"label": "Mateos Zimmer",
+"etage":0
 },
 {
 "id": "chb-ben",
-"label": "Bens Zimmer"
+"label": "Bens Zimmer",
+"etage":1
 },
 {
 "id": "chb-parent",
-"label": "Elternschlafzimmer"
+"label": "Elternschlafzimmer",
+"etage":1
 },
 {
 "id": "chb-jul",
-"label": "Juliettes Zimmer"
+"label": "Juliettes Zimmer",
+"etage":1
 },
 {
 "id": "palier",
-"label": "Flur"
+"label": "Flur",
+"etage":1
 }
 ]
