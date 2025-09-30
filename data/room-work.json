@@ -26,7 +26,7 @@
   {
     "pieceId": "cuisine",
     "travailId": "vitre",
-    "duree": "",
+    "duree": 10,
     "frequence": "Y"
   },
   {
@@ -37,7 +37,7 @@
   },
   {
     "pieceId": "cuisine",
-    "travailId": "facade_placard",
+    "travailId": "meuble",
     "duree": 20,
     "frequence": "M"
   },
@@ -86,7 +86,7 @@
   {
     "pieceId": "salle-bain",
     "travailId": "vitre",
-    "duree": "",
+    "duree": 10,
     "frequence": "Y"
   },
   {
@@ -103,7 +103,7 @@
   },
   {
     "pieceId": "salle-bain",
-    "travailId": "facade_placard",
+    "travailId": "meuble",
     "duree": 5,
     "frequence": "M"
   },
@@ -128,7 +128,7 @@
   {
     "pieceId": "escalier",
     "travailId": "vitre",
-    "duree": "",
+    "duree": 10,
     "frequence": "Y"
   },
   {
@@ -170,7 +170,7 @@
   {
     "pieceId": "entree",
     "travailId": "vitre",
-    "duree": "",
+    "duree": 10,
     "frequence": "Y"
   },
   {
@@ -191,6 +191,12 @@
     "duree": 5,
     "frequence": "M"
   },
+   {
+    "pieceId": "salon",
+    "travailId": "meuble",
+    "duree": 20,
+    "frequence": "M"
+  },
   {
     "pieceId": "salon",
     "travailId": "radiateur",
@@ -200,7 +206,7 @@
   {
     "pieceId": "salon",
     "travailId": "vitre",
-    "duree": "",
+    "duree": 10,
     "frequence": "Y"
   },
   {
@@ -217,7 +223,7 @@
   },
   {
     "pieceId": "salon",
-    "travailId": "facade_placard",
+    "travailId": "meuble",
     "duree": 10,
     "frequence": "M"
   },
@@ -242,7 +248,7 @@
   {
     "pieceId": "game-room",
     "travailId": "vitre",
-    "duree": "",
+    "duree": 10,
     "frequence": "Y"
   },
   {
@@ -302,7 +308,7 @@
   {
     "pieceId": "wc-1",
     "travailId": "vitre",
-    "duree": "",
+    "duree": 10,
     "frequence": "Y"
   },
   {
@@ -356,7 +362,7 @@
   {
     "pieceId": "wc-2",
     "travailId": "vitre",
-    "duree": "",
+    "duree": 10,
     "frequence": "Y"
   },
   {
@@ -391,6 +397,12 @@
   },
   {
     "pieceId": "chb-mateo",
+    "travailId": "meuble",
+    "duree": 20,
+    "frequence": "M"
+  },
+  {
+    "pieceId": "chb-mateo",
     "travailId": "radiateur",
     "duree": 5,
     "frequence": "Y"
@@ -398,7 +410,7 @@
   {
     "pieceId": "chb-mateo",
     "travailId": "vitre",
-    "duree": "",
+    "duree": 10,
     "frequence": "Y"
   },
   {
@@ -415,7 +427,7 @@
   },
   {
     "pieceId": "chb-mateo",
-    "travailId": "facade_placard",
+    "travailId": "meuble",
     "duree": 20,
     "frequence": "M"
   },
@@ -437,6 +449,12 @@
     "duree": 5,
     "frequence": "M"
   },
+   {
+    "pieceId": "chb-ben",
+    "travailId": "meuble",
+    "duree": 20,
+    "frequence": "M"
+  },
   {
     "pieceId": "chb-ben",
     "travailId": "radiateur",
@@ -446,7 +464,7 @@
   {
     "pieceId": "chb-ben",
     "travailId": "vitre",
-    "duree": "",
+    "duree": 10,
     "frequence": "Y"
   },
   {
@@ -463,7 +481,7 @@
   },
   {
     "pieceId": "chb-ben",
-    "travailId": "facade_placard",
+    "travailId": "meuble",
     "duree": 5,
     "frequence": "M"
   },
@@ -479,6 +497,12 @@
     "duree": 5,
     "frequence": "M"
   },
+   {
+    "pieceId": "chb-parent",
+    "travailId": "meuble",
+    "duree": 20,
+    "frequence": "M"
+  },
   {
     "pieceId": "chb-parent",
     "travailId": "radiateur",
@@ -488,7 +512,7 @@
   {
     "pieceId": "chb-parent",
     "travailId": "vitre",
-    "duree": "",
+    "duree": 10,
     "frequence": "Y"
   },
   {
@@ -499,7 +523,7 @@
   },
   {
     "pieceId": "chb-parent",
-    "travailId": "facade_placard",
+    "travailId": "meuble",
     "duree": 20,
     "frequence": "M"
   },
@@ -521,6 +545,12 @@
     "duree": 5,
     "frequence": "M"
   },
+   {
+    "pieceId": "chb-jul",
+    "travailId": "meuble",
+    "duree": 20,
+    "frequence": "M"
+  },
   {
     "pieceId": "chb-jul",
     "travailId": "radiateur",
@@ -530,7 +560,7 @@
   {
     "pieceId": "chb-jul",
     "travailId": "vitre",
-    "duree": "",
+    "duree": 10,
     "frequence": "Y"
   },
   {
@@ -547,7 +577,7 @@
   },
   {
     "pieceId": "chb-jul",
-    "travailId": "facade_placard",
+    "travailId": "meuble",
     "duree": 10,
     "frequence": "M"
   },
@@ -578,7 +608,7 @@
   {
     "pieceId": "palier",
     "travailId": "vitre",
-    "duree": "",
+    "duree": 10,
     "frequence": "Y"
   },
   {

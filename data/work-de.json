@@ -65,8 +65,8 @@
     "consommables": ["Allzweckreiniger", "Mikrofaser"]
   },
   {
-    "id": "facade_placard",
-    "label": "Schrankfronten reinigen",
+    "id": "meuble",
+    "label": "Schrankfronten/Môbel reinigen",
     "consommables": ["Allzweckreiniger", "Mikrofaser"]
   },
   {

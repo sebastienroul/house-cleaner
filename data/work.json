@@ -64,8 +64,8 @@
     "consommables": ["Multiusage", "Microfibre"]
   },
   {
-    "id": "facade_placard",
-    "label": "Nettoyer façades de placard",
+    "id": "meuble",
+    "label": "Nettoyer meuble/placard",
     "consommables": ["Multiusage", "Microfibre"]
   },
   {
