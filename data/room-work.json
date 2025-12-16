@@ -257,7 +257,7 @@
     "frequence": "Y"
   },
   {
-    "pieceId": "salon",
+    "pieceId": "game-room",
     "travailId": "meuble",
     "duree": 10,
     "frequence": "M"
@@ -597,12 +597,6 @@
     "travailId": "interrupteur",
     "duree": 2,
     "frequence": "Y"
-  },
-  {
-    "pieceId": "chb-parent",
-    "travailId": "meuble",
-    "duree": 20,
-    "frequence": "M"
   },
   {
     "pieceId": "chb-jul",
