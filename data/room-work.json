@@ -488,12 +488,7 @@
     "duree": 2,
     "frequence": "Y"
   },
-  {
-    "pieceId": "chb-mateo",
-    "travailId": "meuble",
-    "duree": 20,
-    "frequence": "M"
-  },
+
   {
     "pieceId": "chb-ben",
     "travailId": "aspirateur",
