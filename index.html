@@ -60,8 +60,8 @@
         <div class="col-12 q-mb-lg">
         <q-separator></q-separator>
         </div>
-        <div class="col-6 q-pa-md" v-for="(works,room) in schedule" :key="room">
-
+        <template v-for="(works,room) in schedule" :key="room">
+        <div class="col-6 q-pa-md" v-if="works?.length && works[0]?.room" >
           <div class="row justify-end item-center">
             <div class="col-10 bg-grey-2 text-uppercase text-h5 q-pl-sm">
               {{works[0]?.room}}
@@ -80,6 +80,7 @@
             </div>
           </div>
         </div>
+        </template>
       </div>
     </div>
     <div class="relative-position col-auto q-pa-md bg-blue-grey-8 text-grey-2 print-hide" style="min-height:50px">
