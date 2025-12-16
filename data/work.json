@@ -52,6 +52,10 @@
     "id": "vitre",
     "label": "Nettoyer vitres",
     "consommables": ["Spray vitres", "Microfibre"]
+  },{
+    "id": "porte",
+    "label": "Nettoyer porte",
+    "consommables": ["Multiusage", "Microfibre"]
   },
   {
     "id": "plinthe",

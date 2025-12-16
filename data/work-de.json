@@ -55,6 +55,11 @@
     "consommables": ["Glasreiniger", "Mikrofaser"]
   },
   {
+    "id": "porte",
+    "label": "Tür reinigen",
+    "consommables": ["Allzweckreiniger", "Mikrofaser"]
+  },
+  {
     "id": "plinthe",
     "label": "Sockelleisten reinigen",
     "consommables": ["Allzweckreiniger", "Mikrofaser"]

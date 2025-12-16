@@ -29,6 +29,13 @@
     "duree": 10,
     "frequence": "Y"
   },
+    {
+    "pieceId": "cuisine",
+    "travailId": "porte",
+    "duree": 10,
+    "frequence": "Y"
+  },
+
   {
     "pieceId": "cuisine",
     "travailId": "interrupteur",
@@ -89,6 +96,13 @@
     "duree": 10,
     "frequence": "Y"
   },
+    {
+    "pieceId": "salle-bain",
+    "travailId": "vitreporte
+    "duree": 10,
+    "frequence": "Y"
+  },
+
   {
     "pieceId": "salle-bain",
     "travailId": "plinthe",
@@ -131,6 +145,13 @@
     "duree": 10,
     "frequence": "Y"
   },
+    {
+    "pieceId": "escalier",
+    "travailId": "vitreporte,
+    "duree": 10,
+    "frequence": "Y"
+  },
+
   {
     "pieceId": "escalier",
     "travailId": "plinthe",
@@ -173,6 +194,13 @@
     "duree": 10,
     "frequence": "Y"
   },
+    {
+    "pieceId": "entree",
+    "travailId": "portee",
+    "duree": 10,
+    "frequence": "Y"
+  },
+
   {
     "pieceId": "entree",
     "travailId": "interrupteur",
@@ -209,6 +237,13 @@
     "duree": 10,
     "frequence": "Y"
   },
+    {
+    "pieceId": "salon",
+    "travailId": "portere",
+    "duree": 10,
+    "frequence": "Y"
+  },
+
   {
     "pieceId": "salon",
     "travailId": "plinthe",
@@ -251,6 +286,13 @@
     "duree": 10,
     "frequence": "Y"
   },
+    {
+    "pieceId": "game-room",
+    "travailId": "vitreporte
+    "duree": 10,
+    "frequence": "Y"
+  },
+
   {
     "pieceId": "game-room",
     "travailId": "plinthe",
@@ -311,6 +353,13 @@
     "duree": 10,
     "frequence": "Y"
   },
+    {
+    "pieceId": "wc-1",
+    "travailId": "portetre",
+    "duree": 10,
+    "frequence": "Y"
+  },
+
   {
     "pieceId": "wc-1",
     "travailId": "interrupteur",
@@ -365,6 +414,13 @@
     "duree": 10,
     "frequence": "Y"
   },
+    {
+    "pieceId": "wc-2",
+    "travailId": "portetre",
+    "duree": 10,
+    "frequence": "Y"
+  },
+
   {
     "pieceId": "wc-2",
     "travailId": "interrupteur",
@@ -413,6 +469,13 @@
     "duree": 10,
     "frequence": "Y"
   },
+    {
+    "pieceId": "chb-mateo",
+    "travailId": "vitreporte
+    "duree": 10,
+    "frequence": "Y"
+  },
+
   {
     "pieceId": "chb-mateo",
     "travailId": "plinthe",
@@ -467,6 +530,13 @@
     "duree": 10,
     "frequence": "Y"
   },
+    {
+    "pieceId": "chb-ben",
+    "travailId": "porte",
+    "duree": 10,
+    "frequence": "Y"
+  },
+
   {
     "pieceId": "chb-ben",
     "travailId": "plinthe",
@@ -515,6 +585,13 @@
     "duree": 10,
     "frequence": "Y"
   },
+    {
+    "pieceId": "chb-parent",
+    "travailId": "vitreporte
+    "duree": 10,
+    "frequence": "Y"
+  },
+
   {
     "pieceId": "chb-parent",
     "travailId": "interrupteur",
@@ -563,6 +640,13 @@
     "duree": 10,
     "frequence": "Y"
   },
+    {
+    "pieceId": "chb-jul",
+    "travailId": "porte",
+    "duree": 10,
+    "frequence": "Y"
+  },
+
   {
     "pieceId": "chb-jul",
     "travailId": "plinthe",
@@ -611,6 +695,13 @@
     "duree": 10,
     "frequence": "Y"
   },
+    {
+    "pieceId": "palier",
+    "travailId": "portee",
+    "duree": 10,
+    "frequence": "Y"
+  },
+
   {
     "pieceId": "palier",
     "travailId": "interrupteur",
