@@ -13,6 +13,12 @@
   },
   {
     "pieceId": "cuisine",
+    "travailId": "poubelle",
+    "duree": 5,
+    "frequence": "W"
+  },
+  {
+    "pieceId": "cuisine",
     "travailId": "araignee",
     "duree": 5,
     "frequence": "M"
@@ -88,6 +94,12 @@
     "pieceId": "salle-bain",
     "travailId": "douche",
     "duree": 20,
+    "frequence": "W"
+  },
+   {
+    "pieceId": "salle-bain",
+    "travailId": "poubelle",
+    "duree": 5,
     "frequence": "W"
   },
   {
@@ -400,6 +412,12 @@
     "pieceId": "wc-2",
     "travailId": "toilette",
     "duree": 10,
+    "frequence": "W"
+  },
+     {
+    "pieceId": "wc-2",
+    "travailId": "poubelle",
+    "duree": 5,
     "frequence": "W"
   },
   {
