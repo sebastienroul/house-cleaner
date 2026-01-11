@@ -81,5 +81,10 @@
     "id": "hotte",
     "label": "Nettoyer hotte",
     "consommables": ["Multiusage", "Grattoir ou éponge"]
+  },
+    {
+    "id": "poubelle",
+    "label": "Vider poubelle et nettoyer le placard",
+    "consommables": ["Multiusage"]
   }
 ]
