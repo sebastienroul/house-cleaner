@@ -35,6 +35,11 @@
     "consommables": ["Entkalker", "Schwamm"]
   },
   {
+    "id": "meuble-inside",
+    "label": "Schubladen ausmisten",
+    "consommables": ["Küchenreiniger", "Mikrofaser"]
+  },
+  {
     "id": "plan_travail",
     "label": "Arbeitsfläche reinigen",
     "consommables": ["Küchenreiniger", "Mikrofaser"]
