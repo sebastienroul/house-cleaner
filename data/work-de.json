@@ -83,5 +83,10 @@
     "id": "hotte",
     "label": "Dunstabzugshaube reinigen",
     "consommables": ["Allzweckreiniger", "Schaber oder Schwamm"]
+  },
+  {
+    "id": "poubelle",
+    "label": "Den Müll leeren und den Schrank reinigen",
+    "consommables": []
   }
 ]
